@@ -7,7 +7,7 @@
 #
 
 from MetodosHT10 import *
-from neo4jrestclient.client import *
+from neo4jrestclient.client import GraphDatabase    
 from neo4jrestclient import client
 
 #Menu
@@ -17,9 +17,15 @@ while opcion != 8:
     opcion = input("Ingresar numero de opcion\n")
 
     if(opcion == 1):
-        ingresarDoctor()
+        nombreD = raw_input("Ingrese nombre de doctor: ")
+        colegiadoD = raw_input("Ingrese colegiado de doctor: ")
+        especialidadD = raw_input("Ingrese especialidad de doctor: ")
+        telefonoD = raw_input("Ingrese telofono de doctor: ")
+        ingresarDoctor(nombreD, colegiadoD, especialidadD, telefonoD)
 
     if(opcion == 2):
+        nombreP = raw_input("Ingrese nombre de paciente: ")
+        telefonoP = raw_input("Ingrese telefono de paciente: ")
         ingresarPaciente()
 
     if(opcion == 3):
