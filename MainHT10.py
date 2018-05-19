@@ -1,10 +1,8 @@
 #Hoja de trabajo 10
 #Integrantes:
-#Rodrigo Urrutia
-#Kevin Macario
-#Raul Monzon
+#Kevin Macario 17369
+#Raul Monzon 17014
 #Clase principal
-#
 
 from MetodosHT10 import *
 from neo4jrestclient.client import GraphDatabase    
@@ -12,36 +10,44 @@ from neo4jrestclient import client
 
 #Menu
 opcion = 0
+print ("************Bienvenidio************")
 while opcion != 8:
-    print("1. Ingresar doctor\n 2. Ingresar paciente\n 3. Ingresar que un paciente dado, visita un doctor\n 4. Consultar especialidad de doctor\n 5. Ingresar que una persona conoce a otra\n 6. Recomendacion dado una persona\n 7. Recomendacion dado un doctor especifico\n 8. Salir")
+    print ("______________MENU______________")
+    print ("1. Ingresar doctor")
+    print ("2. Ingresar paciente")
+    print ("3. Ingresar que un paciente dado, visita un doctor")
+    print ("4. Consultar especialidad de doctor")
+    print ("5. Ingresar que una persona conoce a otra")
+    print ("6. Recomendacion dado una persona")
+    print ("7. Recomendacion dado un doctor especifico")
+    print ("8. salir")
     opcion = input("Ingresar numero de opcion\n")
 
     if(opcion == 1):
-        nombreD = raw_input("Ingrese nombre de doctor: ")
-        colegiadoD = raw_input("Ingrese colegiado de doctor: ")
-        especialidadD = raw_input("Ingrese especialidad de doctor: ")
-        telefonoD = raw_input("Ingrese telofono de doctor: ")
-        ingresarDoctor(nombreD, colegiadoD, especialidadD, telefonoD)
-
-    if(opcion == 2):
-        nombreP = raw_input("Ingrese nombre de paciente: ")
-        telefonoP = raw_input("Ingrese telefono de paciente: ")
-        ingresarPaciente()
-
-    if(opcion == 3):
-        ingresarPacienteDoc()
-
-    if(opcion == 4):
-        consultaEspecialidad()
-
-    if(opcion == 5):
-        ingresarRelacion()
-
-    if(opcion == 6):
-        recomendacionPersona()
-
-    if(opcion == 7):
-        recomendacionDoctor()
-
-    if(opcion == 8):
-        print("Usted ha salido del programa")
+        nombreD = raw_input("Ingrese nombre de doctor:\n ")
+        colegiadoD = raw_input("Ingrese colegiado de doctor: \n")
+        especialidadD = raw_input("Ingrese especialidad de doctor: \n")
+        telefonoD = raw_input("Ingrese telofono de doctor: \n")
+        MetodosHT10.ingresarDoctor(nombreD, colegiadoD, especialidadD, telefonoD)
+    else:
+        if(opcion == 2):
+            nombreP = raw_input("Ingrese nombre de paciente: \n")
+            telefonoP = raw_input("Ingrese telefono de paciente: \n")
+            ingresarPaciente()
+        else:
+            if(opcion == 3):
+                ingresarPacienteDoc()
+            else:
+                if(opcion == 4):
+                    consultaEspecialidad()
+                else:
+                    if(opcion == 5):
+                        ingresarRelacion()
+                    else:
+                        if(opcion == 6):
+                            recomendacionPersona()
+                        else:
+                            if(opcion == 7):
+                                recomendacionDoctor()
+                            else:
+                                print("Usted ha salido del programa")
